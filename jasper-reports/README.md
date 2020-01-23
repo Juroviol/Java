@@ -27,3 +27,9 @@ Por exemplo: imagine que no seu relatório você deseje exibir informações ref
 Para criar um parâmetro basta abrir seu arquivo `.jrxml` na ferramenta [TIBCO Jaspersoft Studio](#TIBCO-Jaspersoft-Studio) e na aba "Outline" no item "Parameters" do nome do seu relatório clicar em "Create Parameter". Será aberta outra aba onde será possível modificar o nome desse parâmetro e definir o seu tipo. O tipo pode ser desde classes nativas do Java, como os wrappers: String, Integer, Double, BigDecimal como classes customizadas, como POJOs por exemplo. Desde que essa classe customizada esteja presente no [Build Path](#Build-Path) do projeto.
 
 ## Fields
+
+Um relatório é dividido em diversos setores como: Page Header, Column Header, Footer entre outros. Cada setor tem uma função específica. Por exemplo: o setor Page Header é exibido em todas as páginas caso o relatório exija uma nova página para exibir o conteúdo. 
+
+Um relatório, na maioria dos casos, exibe diversos dados que são repetidos na página como uma lista. **A área no relatório responsável por renderizar a lista de dados é o setor "Detail**. Nesse setor, escrevemos uma expressão que irá renderizar os atributos que cada registro dessa lista possui. Para renderizar esses atributos são utilizados os "fields".
+
+O setor "Detail" é populado através de um Data Source que deve ser fornecido ao relatório. Isso pode ser através de uma query SQL de banco de dados ou uma lista de objetos JAVA.
