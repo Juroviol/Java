@@ -2,6 +2,8 @@
 
 JasperReports é a biblioteca de código aberto mais popular do mundo para geração de relatórios. É inteiramente escrita em Java e capaz de utilizar dados vindos de qualquer tipo de origem de dados e produzir documentos que podem ser visualizados, imprimidos ou exportas em uma variedade de formatos incluíndo HTML, PDF, Excel, OpenOffice e Word.
 
+- [TIBCO Jaspersoft Studio](#TIBCO-Jaspersoft-Studio)
+
 ## TIBCO Jaspersoft Studio
 
 TIBCO Jaspersoft® Studio é uma ferramenta de edição para construção dos relatórios que serão gerados. A ferramenta ajuda no design de templates de relatórios; construção de queries de relatório; escrever expressões complexas; construções de componentes visuais de layout como mais de 50 tipos de gráficos, mapas, tabelas e componentes customizáveis; e muito mais.
