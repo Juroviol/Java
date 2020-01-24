@@ -10,7 +10,7 @@ Tudo que é construído nessa ferramenta se gera como produto um ou mais arquivo
 
 ## JRXML
 
-O [TIBCO Jaspersoft Studio](#TIBCO-Jaspersoft-Studio) define um relatório através de um arquivo XML. Um arquivo jrxml é composto de diversas seções; algumas relacionadas a características físicas do relatório (como a dimensão da página, o posicionamento dos campos e a altura das bandas), e outras relacionadas a características lógicas (como a declaração de parâmetros e variáveos e da definição da query para seleção de dados).
+O [TIBCO Jaspersoft Studio](#TIBCO-Jaspersoft-Studio) define um relatório através de um arquivo XML. Um arquivo jrxml é composto de diversas seções; algumas relacionadas a características físicas do relatório (como a dimensão da página, o posicionamento dos campos e a altura das bandas), e outras relacionadas a características lógicas (como a declaração de parâmetros e variáveis e da definição da query para seleção de dados).
 
 ## Build Path
 
