@@ -28,7 +28,19 @@ Para que a ferramenta seja capaz de [compilar](#compilação) o seu relatório �
 
 Os parâmetros são formas de se passar dados para um relatório e referencia-los a fim de exibi-los. Isso se aplica também para passar dados de um relatório para um [sub-relatório](#Sub-relatório).
 
-Por exemplo: imagine que no seu relatório você deseje exibir informações referente aos dados de uma pessoa. Para exibir as informações precisaremos referenciar o parâmetro que foi criado no relatório, o qual será alimentado externamente. Dessa pessoa iremos utilizar diversas referências como: `$P{pessoa}.getNome()`, `$P{pessoa}.getIdade()`. Como pode ser visto, a notação `$P{}` se refere a uma informação que foi passada via parâmetro. No caso exemplificado estamos referenciado o valor `pessoa` o qual é o nome dado ao parâmetro.
+Por exemplo: imagine que no seu relatório você deseje exibir informações referente aos dados de uma pessoa e que no nosso projeto JAVA temos a classe `Pessoa` conforme: 
+
+```
+class Pessoa {
+  private String nome;
+  private int idade;
+  ...getters and setters
+}
+```
+
+Para exibir as informações de alguma instância desse objeto, precisaremos referenciar no relatório o parâmetro que foi criado, o qual será alimentado externamente. Dessa pessoa iremos utilizar diversas referências como: `$P{pessoa}.getNome()`, `$P{pessoa}.getIdade()`. 
+
+Como pode ser visto, a notação `$P{}` se refere a uma informação que foi passada via parâmetro. No caso exemplificado estamos referenciado o valor `pessoa` o qual é o nome dado ao parâmetro.
 
 Para criar um parâmetro basta abrir seu arquivo `.jrxml` na ferramenta [TIBCO Jaspersoft Studio](#TIBCO-Jaspersoft-Studio) e na aba "Outline" no item "Parameters" do nome do seu relatório clicar em "Create Parameter". Será aberta outra aba onde será possível modificar o nome desse parâmetro e definir o seu tipo. O tipo pode ser desde classes nativas do Java, como os wrappers: String, Integer, Double, BigDecimal como classes customizadas, como POJOs por exemplo. Desde que essa classe customizada esteja presente no [Build Path](#Build-Path) do projeto.
 
