@@ -7,6 +7,8 @@
   - [Implementações dentro do WAR](#implementações-dentro-do-war)
 - [Exemplos de implementação](#exemplos-de-implementação)
   - [3.X](#3x)
+    - [Com necessidade de expor ejb remoto](#com-necessidade-de-expor-ejb-remoto)
+    - [Sem necessidade de export ejb remoto](#com-necessidade-de-expor-ejb-remoto)
   - [2.X](#2x)
 - [Sessões de Bean](#sessões-de-bean)
   - [Stateless](#stateless)
