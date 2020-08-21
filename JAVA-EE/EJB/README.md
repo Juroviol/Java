@@ -39,17 +39,17 @@ O empocotamento de implementações de EJB podem ser realizado de três maneiras
 - [Como um módulo no EAR](#como-um-módulo-no-ear)
 - [Implementações dentro do WAR](#implementações-dentro-do-war)
 
-##### Como uma biblioteca no WAR
+#### Como uma biblioteca no WAR
 
 No caso de um WAR a biblioteca do EJB será tratada como uma biblioteca comum que será incluída no diretório `WEB-INF/lib`. No caso da implementação da especificação EJB 2.X na presença de descritores de implemetação `ejb-jar.xml` o mesmo será  ignorado obrigando que seja definido um novo `ejb-jar.xml` no diretório `WEB-INF`. 
 
 Na especificação EJB 3.X ou superior como não existe a necessidade de descritores de implementação por conta da utilização de anotações, nenhuma configuração a mais é necessária, pois o container EJB irá realizar o "escaneamento" das classes automaticamente.
 
-##### Como um módulo no EAR
+#### Como um módulo no EAR
 
 No caso de um EAR o módulo EJB deverá estar definido como um módulo filho gerado como artefato JAR na raíz do diretório e especificado no arquivo `META-INF/application.xml` semelhantemente a um WAR. Ao contrário do WAR neste caso o container EJB irá dectectar, se for o caso, a presença do descritor de implementação `ejb-jar.xml` dentro do artefato JAR do módulo EJB.
 
-##### Implementações dentro do WAR
+#### Implementações dentro do WAR
 
 Um módulo WAR pode ter alguns códigos de bean colocados livremente na estrutura de diretório `WEB-INF/classes` e outros códigos de bean dentro de arquivos JAR no diretório `WEB-INF/lib`. Isso também é válido para um modulo WAR para que todo o código de bean esteja na estrutura de diretório `WEB-INF/classes` e nada no diretório `WEB-INF/lib` ou para que todo o código de bean esteja nos arquivos JAR no diretório `WEB-INF/lib` e nada no `WEB-INF/classes`.`
 
