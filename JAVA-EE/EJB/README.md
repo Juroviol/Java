@@ -63,6 +63,8 @@ Indendentemente de estar colocado dentro da estrutura de diretório `WEB-INF/cla
 
 #### 3.X
 
+##### Com necessidade de export EJB Remoto
+
 Uma interface genérica que servirá tanto para utilização local quanto remoto:
 
 ```
@@ -91,3 +93,19 @@ public class HelloWorldBean implements HelloWorld {
 
 }
 ```
+
+##### Sem necessidade de export EJB remoto
+
+No caso de se utilizar EJB e não houver necessidade de export remotamente algum método, não é preciso criar uma interface genérica e a interface remota. Apenas criar a classe com a lógica de negócio e anotá-la com: `@Stateless` ou `@Statefull` ou `@Singleton`.
+
+```
+@Stateless
+public class HelloWorldBean {
+
+    public String sayHello() {
+        return "Hello";
+    }
+
+}
+```
+
