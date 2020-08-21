@@ -49,6 +49,16 @@ No caso de um WAR a biblioteca do EJB será tratada como uma biblioteca comum qu
 
 Na especificação EJB 3.X ou superior como não existe a necessidade de descritores de implementação por conta da utilização de anotações, nenhuma configuração a mais é necessária, pois o container EJB irá realizar o "escaneamento" das classes automaticamente.
 
+#### Como um módulo no EAR
+
+No caso de um EAR o módulo EJB deverá estar definido como um módulo filho gerado como artefato JAR na raíz do diretório e especificado no arquivo `META-INF/application.xml` semelhantemente a um WAR. Ao contrário do WAR neste caso o container EJB irá dectectar, se for o caso, a presença do descritor de implementação `ejb-jar.xml` dentro do artefato JAR do módulo EJB.
+
+#### Implementações dentro do WAR
+
+Um módulo WAR pode ter alguns códigos de bean colocados livremente na estrutura de diretório `WEB-INF/classes` e outros códigos de bean dentro de arquivos JAR no diretório `WEB-INF/lib`. Isso também é válido para um modulo WAR para que todo o código de bean esteja na estrutura de diretório `WEB-INF/classes` e nada no diretório `WEB-INF/lib` ou para que todo o código de bean esteja nos arquivos JAR no diretório `WEB-INF/lib` e nada no `WEB-INF/classes`.`
+
+Indendentemente de estar colocado dentro da estrutura de diretório `WEB-INF/classes` ou estar dentro do diretório `WEB-INF/lib`, no caso da especificação EJB 2.X é obrigatório que o descritor de implementação seja declarado para os beans de ambos os casos, mesmo que o artefato JAR dentro do `WEB-INF/lib` já o declare, conforme explicado em [Módulo EJB como uma biblioteca no WAR](#como-uma-biblioteca-no-war).
+
 ### Versões
 
 #### 3.X
@@ -81,13 +91,3 @@ public class HelloWorldBean implements HelloWorld {
 
 }
 ```
-
-#### Como um módulo no EAR
-
-No caso de um EAR o módulo EJB deverá estar definido como um módulo filho gerado como artefato JAR na raíz do diretório e especificado no arquivo `META-INF/application.xml` semelhantemente a um WAR. Ao contrário do WAR neste caso o container EJB irá dectectar, se for o caso, a presença do descritor de implementação `ejb-jar.xml` dentro do artefato JAR do módulo EJB.
-
-#### Implementações dentro do WAR
-
-Um módulo WAR pode ter alguns códigos de bean colocados livremente na estrutura de diretório `WEB-INF/classes` e outros códigos de bean dentro de arquivos JAR no diretório `WEB-INF/lib`. Isso também é válido para um modulo WAR para que todo o código de bean esteja na estrutura de diretório `WEB-INF/classes` e nada no diretório `WEB-INF/lib` ou para que todo o código de bean esteja nos arquivos JAR no diretório `WEB-INF/lib` e nada no `WEB-INF/classes`.`
-
-Indendentemente de estar colocado dentro da estrutura de diretório `WEB-INF/classes` ou estar dentro do diretório `WEB-INF/lib`, no caso da especificação EJB 2.X é obrigatório que o descritor de implementação seja declarado para os beans de ambos os casos, mesmo que o artefato JAR dentro do `WEB-INF/lib` já o declare, conforme explicado em [Módulo EJB como uma biblioteca no WAR](#como-uma-biblioteca-no-war).
