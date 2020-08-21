@@ -1,5 +1,6 @@
 # JNDI
 
+- [Referências de Recursos](#referências-de-recursos)
 - [Lookup](#lookup)
 
 ## Referências de Recursos
