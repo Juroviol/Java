@@ -9,6 +9,7 @@
   - [3.X](#3x)
     - [Com necessidade de expor ejb remoto](#com-necessidade-de-expor-ejb-remoto)
     - [Sem necessidade de export ejb remoto](#com-necessidade-de-expor-ejb-remoto)
+    - [Gerando JAR client](#gerando-jar-client)
   - [2.X](#2x)
 - [Sessões de Bean](#sessões-de-bean)
   - [Stateless](#stateless)
@@ -140,7 +141,22 @@ HelloWorldLocal helloWorld = (HelloWorldLocal) ic.lookup("java:global/ear-1.0-SN
 
 É possível também configurar uma referência de recurso EJB no web.xml da aplicação web para que o lookup possa ser realizado através do JNDI `java:comp/env/`.
 
+### Gerando JAR Client
 
+Uma vez configurado os beans EJB locais ou remotos, é preciso prover um artefato JAR com as classes JAVA das interfaces locais e remotas para que as aplicações clientes que irão consumir os métodos possam realizar as chamadas. Para isto na aplicação onde os beans EJB foram implementados adicionar o seguinte plugin no pom.xml:
+
+```
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-ejb-plugin</artifactId>
+  <version>2.2.1</version>
+  <configuration>
+      <ejbVersion>3.2</ejbVersion>
+      <generateClient>true</generateClient>
+  </configuration>
+</plugin>
+```
+Após o build da aplicação via maven, será gerado um artefato JAR na pasta target da aplicação. Este JAR deve ser fornecido para que as aplicações que irão consumir os métodos incluam o mesmo no seu ClassPath.
 
 ### Sessões de Bean
 
