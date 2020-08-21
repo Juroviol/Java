@@ -8,6 +8,10 @@
 - [Exemplos de implementação](#exemplos-de-implementação)
   - [3.X](#3x)
   - [2.X](#2x)
+- [Sessões de Bean](#sessões-de-bean)
+  - [Stateless](#stateless)
+  - [Stateful](#stateful)
+  - [Singleton](#singleton)
   
 
 ### Módulo Maven
@@ -96,7 +100,7 @@ public class HelloWorldBean implements HelloWorld {
 
 ##### Sem necessidade de expor EJB remoto
 
-No caso de se utilizar EJB e não houver necessidade de expor remotamente algum método, não é preciso criar uma interface genérica e a interface remota. Apenas criar a classe com a lógica de negócio e anotá-la com: `@Stateless` ou `@Statefull` ou `@Singleton`. A injeção desta classe sem interface local sempre será através de `@EJB`.
+No caso de se utilizar EJB e não houver necessidade de expor remotamente algum método, não é preciso criar uma interface genérica e a interface remota. Apenas criar a classe com a lógica de negócio e anotá-la com: `@Stateless` ou `@Stateful` ou `@Singleton`. A injeção desta classe sem interface local sempre será através de `@EJB`.
 
 ```
 @Stateless
@@ -108,4 +112,18 @@ public class HelloWorldBean {
 
 }
 ```
+
+### Sessões do Bean
+
+#### Stateless
+
+Bean instanciado a cada requisição de cliente, ou seja, quando um cliente invoca método do bean, as variáveis do bean manterão estado somente durante a invocação do método. Quando o método for finalizado, o estado associado ao cliente não é mantido.
+
+#### Stateful
+
+Bean instanciado e associado a um único cliente, ou seja, para cada cliente que realiza requisições uma nova instância do bean é criada e o estado deste bean é mantido entre invocações de métodos pois está associado a um único cliente.
+
+#### Singleton
+
+Um bean de sessão que é instanciado uma única vez por aplicação e pelo tempo de vida da aplicação. São utilizados em circunstâncias em que uma única instância do bean pode ser compartilhado entre múltiplos clientes concorrentes.
 
