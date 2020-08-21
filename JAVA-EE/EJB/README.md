@@ -5,7 +5,7 @@
   - [Como uma biblioteca no WAR](#como-uma-biblioteca-no-war)
   - [Como um módulo no EAR](#como-um-módulo-no-ear)
   - [Implementações dentro do WAR](#implementações-dentro-do-war)
-- [Versões](#versões)
+- [Exemplos de implementação](#exemplos-de-implementação)
   - [3.X](#3.x)
   - [2.X](#2.x)
   
@@ -59,7 +59,7 @@ Um módulo WAR pode ter alguns códigos de bean colocados livremente na estrutur
 
 Indendentemente de estar colocado dentro da estrutura de diretório `WEB-INF/classes` ou estar dentro do diretório `WEB-INF/lib`, no caso da especificação EJB 2.X é obrigatório que o descritor de implementação seja declarado para os beans de ambos os casos, mesmo que o artefato JAR dentro do `WEB-INF/lib` já o declare, conforme explicado em [Módulo EJB como uma biblioteca no WAR](#como-uma-biblioteca-no-war).
 
-### Versões
+### Exemplos de implementação
 
 #### 3.X
 
