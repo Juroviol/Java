@@ -6,8 +6,8 @@
   - [Como um módulo no EAR](#como-um-módulo-no-ear)
   - [Implementações dentro do WAR](#implementações-dentro-do-war)
 - [Exemplos de implementação](#exemplos-de-implementação)
-  - [3.X](#3.X)
-  - [2.X](#2.X)
+  - [3.X](#3x)
+  - [2.X](#2x)
   
 
 ### Módulo Maven
