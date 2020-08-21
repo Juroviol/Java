@@ -79,7 +79,7 @@ Uma interface para utilização remoto:
 public interface HelloWorldRemote extends HelloWorld {}
 ```
 
-Uma classe que implementa a interface genérica com a lógica de negócio. A partir da versão 3.1 foi adicionado a anotação `@LocalBean` que dispensa a necessidade de criação de uma interface com a anotação `@Local`. Com a utilização da anotação `@LocalBean` a classe deverá ser injetada utilizando a anotação `@EJB`. Caso seja a versão anterior a 3.1, é preciso criar também uma interface para o uso local com a anotação `@Loca` e injeção da classe se dará através da anotação `@Inject`. 
+Uma classe que implementa a interface genérica com a lógica de negócio. A partir da versão 3.1 foi adicionado a anotação `@LocalBean` que dispensa a necessidade de criação de uma interface com a anotação `@Local`. Com a utilização da anotação `@LocalBean` a classe deverá ser injetada utilizando a anotação `@EJB`. Caso seja a versão anterior a 3.1, é preciso criar também uma interface para o uso local com a anotação `@Local` e injeção da classe se dará através da anotação `@Inject`. 
 
 ```
 @Stateless
