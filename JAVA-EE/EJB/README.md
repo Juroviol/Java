@@ -5,6 +5,10 @@
   - [Como uma biblioteca no WAR](#como-uma-biblioteca-no-war)
   - [Como um módulo no EAR](#como-um-módulo-no-ear)
   - [Implementações dentro do WAR](#implementações-dentro-do-war)
+- [Versões](#versões)
+  - [3.X](#3.x)
+  - [2.X](#2.x)
+  
 
 ### Módulo Maven
 
