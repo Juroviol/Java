@@ -100,6 +100,30 @@ public class HelloWorldBean implements HelloWorld {
 }
 ```
 
+Se tudo for configurado com sucesso será possível visualizar na log de inicialização do servidor o nome JNDI das inaterfaces local e remote conforme exemplo abaixo:
+
+Local
+
+```
+CNTR0167I: O servidor está ligando a interface br.com.playground.ejb.HelloWorldLocal do enterprise bean HelloWorldBean no módulo ejb-1.0-SNAPSHOT.jar do aplicativo ear_ear_exploded.  O local de ligação é: java:global/ear-1.0-SNAPSHOT/ejb-1.0-SNAPSHOT/HelloWorldBean!br.com.playground.ejb.HelloWorldLocal
+```
+
+Remote
+
+```
+CNTR0167I: O servidor está ligando a interface br.com.playground.ejb.HelloWorldRemote do enterprise bean HelloWorldBean no módulo ejb-1.0-SNAPSHOT.jar do aplicativo ear_ear_exploded.  O local de ligação é: java:global/ear-1.0-SNAPSHOT/ejb-1.0-SNAPSHOT/HelloWorldBean!br.com.playground.ejb.HelloWorldRemote
+```
+
+Aplicações que residem na mesma JVM podem realizar lookup da interface local através do exemplo de código abaixo:
+
+```
+InitialContext ic = new InitialContext();
+HelloWorldLocal helloWorld = (HelloWorldLocal) ic.lookup("java:global/ear-1.0-SNAPSHOT/ejb-1.0-SNAPSHOT/HelloWorldBean!br.com.playground.ejb.HelloWorldLocal");
+```
+
+É possível também configurar uma referência derecurso EJB no web.xml da aplicação web para que o lookup possa ser realizado através do JNDI `java:comp/env/`.
+
+
 ##### Sem necessidade de expor EJB remoto
 
 No caso de se utilizar EJB e não houver necessidade de expor remotamente algum método, não é preciso criar uma interface genérica e a interface remota. Apenas criar a classe com a lógica de negócio e anotá-la com: `@Stateless` ou `@Stateful` ou `@Singleton`. A injeção desta classe sem interface local sempre será através de `@EJB`.
