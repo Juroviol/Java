@@ -6,8 +6,8 @@
   - [Como um módulo no EAR](#como-um-módulo-no-ear)
   - [Implementações dentro do WAR](#implementações-dentro-do-war)
 - [Exemplos de implementação](#exemplos-de-implementação)
-  - [3.X](#3.x)
-  - [2.X](#2.x)
+  - [3.X](#3.X)
+  - [2.X](#2.X)
   
 
 ### Módulo Maven
@@ -63,7 +63,7 @@ Indendentemente de estar colocado dentro da estrutura de diretório `WEB-INF/cla
 
 #### 3.X
 
-##### Com necessidade de export EJB Remoto
+##### Com necessidade de expor EJB Remoto
 
 Uma interface genérica que servirá tanto para utilização local quanto remoto:
 
@@ -94,7 +94,7 @@ public class HelloWorldBean implements HelloWorld {
 }
 ```
 
-##### Sem necessidade de export EJB remoto
+##### Sem necessidade de expor EJB remoto
 
 No caso de se utilizar EJB e não houver necessidade de export remotamente algum método, não é preciso criar uma interface genérica e a interface remota. Apenas criar a classe com a lógica de negócio e anotá-la com: `@Stateless` ou `@Statefull` ou `@Singleton`.
 
