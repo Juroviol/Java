@@ -131,7 +131,7 @@ Remote
 CNTR0167I: O servidor está ligando a interface br.com.playground.ejb.HelloWorldRemote do enterprise bean HelloWorldBean no módulo ejb-1.0-SNAPSHOT.jar do aplicativo ear_ear_exploded.  O local de ligação é: java:global/ear-1.0-SNAPSHOT/ejb-1.0-SNAPSHOT/HelloWorldBean!br.com.playground.ejb.HelloWorldRemote
 ```
 
-Aplicações que residem na mesma JVM podem realizar lookup da interface local através do exemplo de código abaixo:
+Aplicações que residem na mesma JVM podem realizar lookup da interface local através do exemplo de código abaixo desde que possuam o jar client ejb:
 
 ```
 InitialContext ic = new InitialContext();
