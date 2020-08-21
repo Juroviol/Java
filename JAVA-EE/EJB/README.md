@@ -113,7 +113,7 @@ public class HelloWorldBean {
 }
 ```
 
-### Sessões do Bean
+### Sessões de Bean
 
 #### Stateless
 
