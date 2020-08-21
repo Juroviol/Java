@@ -1,5 +1,11 @@
 # EJB
 
+- [Módulo Maven](#módulo-maven)
+- [Empacotamento em WAR e EAR](#empacotamento-em-war-e-ear)
+  - [Como uma biblioteca no WAR](#como-uma-biblioteca-no-war)
+  - [Como um módulo no EAR](#como-um-módulo-no-ear)
+  - [Implementações dentro do WAR](#implementações-dentro-do-war)
+
 ### Módulo Maven
 
 Um módulo EJB nada mais nada menos é que um artefato JAR que possui o código fonte da lógica de negócio de uma apliação implementadas de forma que seguem a especificação do EJB variando na presença de alguns arquivos dependendo da versão da especificação. 
