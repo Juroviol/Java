@@ -49,6 +49,39 @@ No caso de um WAR a biblioteca do EJB será tratada como uma biblioteca comum qu
 
 Na especificação EJB 3.X ou superior como não existe a necessidade de descritores de implementação por conta da utilização de anotações, nenhuma configuração a mais é necessária, pois o container EJB irá realizar o "escaneamento" das classes automaticamente.
 
+### Versões
+
+#### 3.X
+
+Uma interface genérica que servirá tanto para utilização local quanto remoto:
+
+```
+public interface HelloWorld {
+    String sayHello();
+}
+```
+
+Uma interface para utilização remoto:
+
+```
+public interface HelloWorldRemote extends HelloWorld {}
+```
+
+Uma classe que implementa a interface genérica com a lógica de negócio. A partir da versão 3.1 foi adicionado a anotação `@LocalBean` que dispensa a necessidade de criação de uma interface com a anotação `@Local`. Caso contrário é preciso criar também uma interface para o uso local. Exemplo: `HelloWorldLocal` que implementa a interface genérica `HelloWorld`.
+
+```
+@Stateless
+@Remote(HelloWorldRemote.class)
+@LocalBean
+public class HelloWorldBean implements HelloWorld {
+
+    public String sayHello() {
+        return "Hello";
+    }
+
+}
+```
+
 #### Como um módulo no EAR
 
 No caso de um EAR o módulo EJB deverá estar definido como um módulo filho gerado como artefato JAR na raíz do diretório e especificado no arquivo `META-INF/application.xml` semelhantemente a um WAR. Ao contrário do WAR neste caso o container EJB irá dectectar, se for o caso, a presença do descritor de implementação `ejb-jar.xml` dentro do artefato JAR do módulo EJB.
