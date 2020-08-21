@@ -138,7 +138,7 @@ InitialContext ic = new InitialContext();
 HelloWorldLocal helloWorld = (HelloWorldLocal) ic.lookup("java:global/ear-1.0-SNAPSHOT/ejb-1.0-SNAPSHOT/HelloWorldBean!br.com.playground.ejb.HelloWorldLocal");
 ```
 
-É possível também configurar uma referência derecurso EJB no web.xml da aplicação web para que o lookup possa ser realizado através do JNDI `java:comp/env/`.
+É possível também configurar uma referência de recurso EJB no web.xml da aplicação web para que o lookup possa ser realizado através do JNDI `java:comp/env/`.
 
 
 
